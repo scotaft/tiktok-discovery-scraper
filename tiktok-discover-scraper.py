@@ -13,16 +13,16 @@ urls = urls.iloc[:,0].values.tolist()
 len(urls)
 
 # Check response of URLs
-code_count = 0
+code_success_count = 0
 code_error_count = 0
 for url in urls:
     response = requests.get(url)
     if response.ok:
-        code_count +=1
+        code_success_count +=1
     else:
         code_error_count +=1
     time.sleep(5)
-print('Success: '+str(code_count))
+print('Success: '+str(code_success_count))
 print('Errors: '+str(code_error_count))
 
 # Scrape video list
